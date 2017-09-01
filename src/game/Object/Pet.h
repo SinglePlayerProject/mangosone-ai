@@ -70,6 +70,13 @@ enum HappinessState
     HAPPY   = 3
 };
 
+enum PetDatabaseStatus
+{
+	PET_DB_NO_PET = 0,
+	PET_DB_DEAD = 1,
+	PET_DB_ALIVE = 2,
+};
+
 enum LoyaltyLevel
 {
     REBELLIOUS  = 1,
@@ -173,6 +180,7 @@ class Pet : public Creature
         void SavePetToDB(PetSaveMode mode);
         void Unsummon(PetSaveMode mode, Unit* owner = NULL);
         static void DeleteFromDB(uint32 guidlow, bool separate_transaction = true);
+		static PetDatabaseStatus GetStatusFromDB(Player*);
 
         void SetDeathState(DeathState s) override;          // overwrite virtual Creature::SetDeathState and Unit::SetDeathState
         void Update(uint32 update_diff, uint32 diff) override;  // overwrite virtual Creature::Update and Unit::Update

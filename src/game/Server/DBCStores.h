@@ -71,6 +71,8 @@ uint32 GetTalentInspectBitPosInTab(uint32 talentId);
 uint32 GetTalentTabInspectBitSize(uint32 talentTabId);
 uint32 const* /*[3]*/ GetTalentTabPages(uint32 cls);
 
+EmotesTextSoundEntry const * FindTextSoundEmoteFor(uint32 emote, uint32 race, uint32 gender);
+
 bool IsPointInAreaTriggerZone(AreaTriggerEntry const* atEntry, uint32 mapid, float x, float y, float z, float delta = 0.0f);
 
  uint32 GetCreatureModelRace(uint32 model_id);
@@ -80,7 +82,7 @@ extern DBCStorage <AreaTriggerEntry>             sAreaTriggerStore;
 extern DBCStorage <AuctionHouseEntry>            sAuctionHouseStore;
 extern DBCStorage <BankBagSlotPricesEntry>       sBankBagSlotPricesStore;
 extern DBCStorage <BattlemasterListEntry>        sBattlemasterListStore;
-// extern DBCStorage <ChatChannelsEntry>           sChatChannelsStore; -- accessed using function, no usable index
+extern DBCStorage <ChatChannelsEntry>           sChatChannelsStore; // accessed using function, no usable index
 extern DBCStorage <CharStartOutfitEntry>         sCharStartOutfitStore;
 extern DBCStorage <CharTitlesEntry>              sCharTitlesStore;
 extern DBCStorage <ChrClassesEntry>              sChrClassesStore;
